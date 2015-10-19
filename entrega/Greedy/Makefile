@@ -1,5 +1,5 @@
 #################
-## BRUTE FORCE ##
+## GREEDY ##
 #################
 
 
@@ -25,12 +25,12 @@ RCFLAGS_RELEASE = $(RCFLAGS)
 LIBDIR_RELEASE = $(LIBDIR)
 LIB_RELEASE = $(LIB)
 LDFLAGS_RELEASE = $(LDFLAGS)
-OBJDIR_RELEASE = obj_bruteforce
-OUTDIR_RELEASE = bin_bruteforce
+OBJDIR_RELEASE = obj
+OUTDIR_RELEASE = bin
 DEP_RELEASE = 
-OUT_RELEASE = $(OUTDIR_RELEASE)/bruteforce
+OUT_RELEASE = $(OUTDIR_RELEASE)/greedy
 
-OBJ_RELEASE = $(OBJDIR_RELEASE)/bruteforce.o $(OBJDIR_RELEASE)/src/domain/Level.o $(OBJDIR_RELEASE)/src/helper/Settings.o $(OBJDIR_RELEASE)/src/algorithms/BruteForce.o
+OBJ_RELEASE = $(OBJDIR_RELEASE)/greedy.o $(OBJDIR_RELEASE)/src/domain/Level.o $(OBJDIR_RELEASE)/src/helper/Settings.o $(OBJDIR_RELEASE)/src/algorithms/Greedy.o
 
 all: release
 
@@ -57,11 +57,11 @@ $(OBJDIR_RELEASE)/src/helper/Settings.o: src/helper/Settings.cpp
 $(OBJDIR_RELEASE)/src/domain/Level.o: src/domain/Level.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/domain/Level.cpp -o $(OBJDIR_RELEASE)/src/domain/Level.o
 
-$(OBJDIR_RELEASE)/src/algorithms/BruteForce.o: src/algorithms/BruteForce.cpp
-	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/algorithms/BruteForce.cpp -o $(OBJDIR_RELEASE)/src/algorithms/BruteForce.o
+$(OBJDIR_RELEASE)/src/algorithms/Greedy.o: src/algorithms/Greedy.cpp
+	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/algorithms/Greedy.cpp -o $(OBJDIR_RELEASE)/src/algorithms/Greedy.o
 
-$(OBJDIR_RELEASE)/bruteforce.o: bruteforce.cpp
-	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c bruteforce.cpp -o $(OBJDIR_RELEASE)/bruteforce.o
+$(OBJDIR_RELEASE)/greedy.o: greedy.cpp
+	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c greedy.cpp -o $(OBJDIR_RELEASE)/greedy.o
 
 clean_release: 
 	rm -f $(OBJ_RELEASE) $(OUT_RELEASE)

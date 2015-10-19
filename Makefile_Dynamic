@@ -1,6 +1,6 @@
-#################
-## BRUTE FORCE ##
-#################
+#############
+## DYNAMIC ##
+#############
 
 
 WORKDIR = `pwd`
@@ -25,12 +25,12 @@ RCFLAGS_RELEASE = $(RCFLAGS)
 LIBDIR_RELEASE = $(LIBDIR)
 LIB_RELEASE = $(LIB)
 LDFLAGS_RELEASE = $(LDFLAGS)
-OBJDIR_RELEASE = obj_bruteforce
-OUTDIR_RELEASE = bin_bruteforce
+OBJDIR_RELEASE = obj_dynamic
+OUTDIR_RELEASE = bin_dynamic
 DEP_RELEASE = 
-OUT_RELEASE = $(OUTDIR_RELEASE)/bruteforce
+OUT_RELEASE = $(OUTDIR_RELEASE)/dynamic
 
-OBJ_RELEASE = $(OBJDIR_RELEASE)/bruteforce.o $(OBJDIR_RELEASE)/src/domain/Level.o $(OBJDIR_RELEASE)/src/helper/Settings.o $(OBJDIR_RELEASE)/src/algorithms/BruteForce.o
+OBJ_RELEASE = $(OBJDIR_RELEASE)/dynamic.o $(OBJDIR_RELEASE)/src/domain/Level.o $(OBJDIR_RELEASE)/src/helper/Settings.o $(OBJDIR_RELEASE)/src/algorithms/Dynamic.o
 
 all: release
 
@@ -57,11 +57,11 @@ $(OBJDIR_RELEASE)/src/helper/Settings.o: src/helper/Settings.cpp
 $(OBJDIR_RELEASE)/src/domain/Level.o: src/domain/Level.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/domain/Level.cpp -o $(OBJDIR_RELEASE)/src/domain/Level.o
 
-$(OBJDIR_RELEASE)/src/algorithms/BruteForce.o: src/algorithms/BruteForce.cpp
-	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/algorithms/BruteForce.cpp -o $(OBJDIR_RELEASE)/src/algorithms/BruteForce.o
+$(OBJDIR_RELEASE)/src/algorithms/Dynamic.o: src/algorithms/Dynamic.cpp
+	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/algorithms/Dynamic.cpp -o $(OBJDIR_RELEASE)/src/algorithms/Dynamic.o
 
-$(OBJDIR_RELEASE)/bruteforce.o: bruteforce.cpp
-	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c bruteforce.cpp -o $(OBJDIR_RELEASE)/bruteforce.o
+$(OBJDIR_RELEASE)/dynamic.o: dynamic.cpp
+	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c dynamic.cpp -o $(OBJDIR_RELEASE)/dynamic.o
 
 clean_release: 
 	rm -f $(OBJ_RELEASE) $(OUT_RELEASE)
